@@ -23,6 +23,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: '1.8'
+        server-id: github
+        settings-path: ${{ github.workspace }}
         distribution: 'temurin'
         cache: maven
         
@@ -30,12 +32,12 @@ jobs:
       run: mvn clean install
       
     - name: Package with Maven
-      run: mvn clean package
+      run: mvn -B package --file pom.xml
       
     - name: Deploy with Maven
-      run: mvn clean deploy
+      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ github.token }}
        
  
  
