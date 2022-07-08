@@ -4,7 +4,7 @@
 # name: Java CI with Maven
 
 name: maven-settings-xml
-  -uses:ssettings-xml
+  -uses:-ssettings-xml
 
 on:
   push:
@@ -29,10 +29,10 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
       
-    - name: Build with Maven
+    - name: Package with Maven
       run: mvn clean package
       
-    - name: Build with Maven
+    - name: Deploy with Maven
       run: mvn clean deploy
  
  
