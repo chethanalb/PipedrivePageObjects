@@ -35,7 +35,7 @@ jobs:
       run: mvn -B package --file pom.xml
       
     - name: Deploy with Maven
-      run: mvn deploy
+      run: mvn clean deploy
       env:
         GITHUB_TOKEN: ${{ github.token }}
        
