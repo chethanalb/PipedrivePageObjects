@@ -29,6 +29,6 @@ jobs:
       run:
        mvn clean install
        mvn clean package
-       mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+       mvn deploy 
  
  
