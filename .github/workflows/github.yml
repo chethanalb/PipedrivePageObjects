@@ -28,6 +28,6 @@ jobs:
     - name: Build with Maven
       run:
        mvn clean install
-       mvn package-D'maven.test.skip=true'
+       mvn package -D'maven.test.skip=true'
  
  
