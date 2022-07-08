@@ -1,0 +1,15 @@
+pageobjects\ScheduleAnActivityPage.class
+pageobjects\DealDetailsPage.class
+pageobjects\ProductsPage.class
+pageobjects\AddDealsPage.class
+pageobjects\LandingPage.class
+pageobjects\LeadsPage.class
+pageobjects\DealsPage.class
+pageobjects\AddProductsPage.class
+enums\CurrencyEnum.class
+base\BasePageObject.class
+pageobjects\AddProductsToDealPage.class
+utils\CalendarUtil.class
+pageobjects\LoginPage.class
+pageobjects\ContactsPage.class
+pageobjects\ActivitiesPage.class
