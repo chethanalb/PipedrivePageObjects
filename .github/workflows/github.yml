@@ -35,7 +35,7 @@ jobs:
       run: mvn -B package --file pom.xml
       
     - name: Deploy with Maven
-      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn deploy -s $GITHUB_WORKSPACE/PipedrivePageObjects/settings.xml
       env:
         GITHUB_TOKEN: ${{ github.token }}
        
