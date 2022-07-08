@@ -33,8 +33,4 @@ jobs:
       run: mvn clean package
       
     - name: Deploy with Maven
-      run: mvn clean deploy
-
-       
- 
- 
+      run: mvn clean deploy 
