@@ -33,6 +33,7 @@ jobs:
       run: mvn clean package
       
     - name: Deploy with Maven
-      run: mvn clean deploy
       env:
+        GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: mvn --settings settings.xml --file pom.xml deploy
