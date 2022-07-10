@@ -18,6 +18,8 @@ jobs:
     - name: change directory
       run: | 
            pwd
+           cd..
+           ls -l
 
            
       
