@@ -78,7 +78,7 @@ jobs:
       uses: peter-evans/repository-dispatch@v1
       with:
         repository: chethanalb/PipedriveFunctions
-        token: ${env.GH_USERNAME}
+        token: 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
         event-type: trigger-functions-workflow
 #         workflow_file_name: github.yml
     needs: [build, package, deploy]
