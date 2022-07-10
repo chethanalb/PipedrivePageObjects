@@ -1,9 +1,9 @@
 #Step 0: Choose base
 FROM markhobson/maven-chrome
 #Step 1 : Install the pre-requisite
-RUN apt-get update
-RUN apt-get install -y curl
-RUN apt-get install -y p7zip \
+RUN apk update
+RUN apk install -y curl
+RUN apk install -y p7zip \
     p7zip-full \
     unace \
     zip \
