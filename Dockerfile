@@ -1,14 +1,5 @@
 #Step 0: Choose base
 FROM markhobson/maven-chrome
-#Step 1 : Install the pre-requisite
-RUN apk update
-RUN apk install -y curl
-RUN apk install -y p7zip \
-    p7zip-full \
-    unace \
-    zip \
-    unzip \
-    bzip2
 
 #Version numbers
 ARG FIREFOX_VERSION=78.0.2
