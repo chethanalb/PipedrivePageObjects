@@ -15,8 +15,11 @@ jobs:
     container:
       image: ubandc2/chethana:main-0fdb48f
     steps: 
+    - name: change directory
+      run: cd PipedrivePageObjects
+      
     - name: Build with Maven
-      run: ls
+      run: mvn clean install
       
   package:
   
