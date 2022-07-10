@@ -12,7 +12,7 @@ ARG FIREFOXDRIVER_VERSION=0.26.0
 ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
 #Making our working directory as /app
-WORKDIR /app
+WORKDIR /usr/src/app
 #Step 7: Copy our project
 COPY . /app
 
