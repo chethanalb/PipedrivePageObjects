@@ -10,21 +10,30 @@ on:
 
 jobs:
   build:
-        
+
     runs-on: ubuntu-latest
-    container:
-      image: ubandc2/chethana:main-0fdb48f
-    steps: 
-    - name: change directory
-      run: | 
-           cd /app
-           ls
-      
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: '1.8'
+        distribution: 'temurin'
+        cache: maven
     - name: Build with Maven
       run: mvn clean install
-      
+
+    - name: Build and Push Docker Image
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with:
+        image: ubandc2/chethana
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
   package:
-  
+
     runs-on: windows-latest
 
     steps:
@@ -35,23 +44,14 @@ jobs:
         java-version: '1.8'
         distribution: 'temurin'
         cache: maven
-      
+
     - name: Package with Maven
       run: mvn clean package
-      
-#     - name: Cache node modules
-#       uses: actions/cache@v2
-#       env:
-#         cache-name: cache-PO-dependancy
-#       with:
-#         path: ~/.m2
-#         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
-#         restore-keys: ${{ runner.os }}-m2
-        
+
     needs: build
-      
+
   deploy:
-  
+
    runs-on: windows-latest
 
    steps:
@@ -62,31 +62,9 @@ jobs:
        java-version: '1.8'
        distribution: 'temurin'
        cache: maven
-      
+
    - name: Deploy with Maven
      run: mvn clean deploy
      env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
    needs: [build, package]
- 
-  trigger:
-  
-    runs-on: windows-latest
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: Set up JDK 1.8
-      uses: actions/setup-java@v1
-      with:
-       java-version: '1.8'
-       distribution: 'temurin'
-       cache: maven
-  
-    - name: Trigger Functions 
-      uses: peter-evans/repository-dispatch@v1
-      with:
-        token: ${{ secrets.REPO_PAT }}
-        repository: chethanalb/PipedriveFunctions
-        event-type: trigger-functions-workflow
-        client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
-    needs: [build, package, deploy]
