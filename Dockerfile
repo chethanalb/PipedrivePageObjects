@@ -1,8 +1,14 @@
 #Step 0: Choose base
 FROM markhobson/maven-chrome
 #Step 1 : Install the pre-requisite
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt update && apt install -y PACKAGE && rm -rf /var/lib/apt/lists/*
+RUN apt-get update
+RUN apt-get install -y curl
+RUN apt-get install -y p7zip \
+    p7zip-full \
+    unace \
+    zip \
+    unzip \
+    bzip2
 
 #Version numbers
 ARG FIREFOX_VERSION=78.0.2
