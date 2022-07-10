@@ -17,15 +17,8 @@ jobs:
     steps: 
     - name: change directory
       run: | 
-           pwd
-           cd ..
-           pwd
-           ls
            cd /app
            ls
-
-           
-      
       
     - name: Build with Maven
       run: mvn clean install
