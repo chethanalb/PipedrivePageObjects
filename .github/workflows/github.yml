@@ -59,7 +59,7 @@ jobs:
      run: mvn clean deploy
      env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-   needs: [build, package]
+#    needs: [build, package]
  
   trigger:
   
@@ -77,7 +77,8 @@ jobs:
     - name: Trigger Functions
       uses: peter-evans/repository-dispatch@v1
       with:
-        repo: PipedriveFunctions
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        workflow_file_name: github.yml
-#       needs: [build, package, deploy]
+        repository: PipedriveFunctions
+        token: ${{ secrets.GITHUB_TOKEN }}
+        event-type: trigger-functions-workflow
+#         workflow_file_name: github.yml
+    needs: [build, package, deploy]
