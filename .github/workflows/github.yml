@@ -83,7 +83,7 @@ jobs:
        distribution: 'temurin'
        cache: maven
   
-    - name: Trigger Functions
+    - name: Trigger Functions 
       uses: peter-evans/repository-dispatch@v1
       with:
         token: ${{ secrets.GH_TOKEN }}
