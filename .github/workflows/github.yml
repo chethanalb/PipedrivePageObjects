@@ -77,8 +77,8 @@ jobs:
     - name: Trigger Functions
       uses: peter-evans/repository-dispatch@v1
       with:
-        repository: PipedriveFunctions
-        token: ${{ secrets.GITHUB_TOKEN }}
+        repository: chethanalb/PipedriveFunctions
+        token: ${{ secrets.GH_TOKEN }}
         event-type: trigger-functions-workflow
 #         workflow_file_name: github.yml
     needs: [build, package, deploy]
