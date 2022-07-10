@@ -40,6 +40,15 @@ jobs:
     - name: Package with Maven
       run: mvn clean package
       
+    - name: Cache node modules
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-PO-dependancy
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+        
     needs: build
       
   deploy:
@@ -80,5 +89,4 @@ jobs:
         token: ${{ secrets.GH_TOKEN }}
         repository: chethanalb/PipedriveFunctions
         event-type: trigger-functions-workflow
-#         workflow_file_name: github.yml
     needs: [build, package, deploy]
