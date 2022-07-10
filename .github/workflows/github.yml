@@ -86,7 +86,7 @@ jobs:
     - name: Trigger Functions 
       uses: peter-evans/repository-dispatch@v1
       with:
-        token: ${{ secrets.GH_TOKEN }}
+        token: ${{ secrets.REPO_PAT }}
         repository: chethanalb/PipedriveFunctions
         event-type: trigger-functions-workflow
         client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
