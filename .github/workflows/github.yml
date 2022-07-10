@@ -1,6 +1,6 @@
-name: Deplot Page Object Artifacts
+name: Deploy Page Object Artifacts
 
-  -uses:-ssettings-xml
+-uses:-ssettings-xml
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-
+        
     runs-on: windows-latest
 
     steps:
@@ -21,7 +21,6 @@ jobs:
         java-version: '1.8'
         distribution: 'temurin'
         cache: maven
-        
     - name: Build with Maven
       run: mvn clean install
       
