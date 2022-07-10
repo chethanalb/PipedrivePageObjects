@@ -11,8 +11,7 @@ ARG FIREFOXDRIVER_VERSION=0.26.0
 # 6- Define environmental variables required by Maven, like Maven_Home directory and where the maven repo is located
 ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
-#Making our working directory as /app
-WORKDIR /usr/src/app
 #Step 7: Copy our project
-COPY . /app
+WORKDIR /usr/src/app
 
+COPY . .
