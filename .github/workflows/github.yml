@@ -21,6 +21,8 @@ jobs:
            cd ..
            pwd
            ls
+           cd /app
+           ls
 
            
       
