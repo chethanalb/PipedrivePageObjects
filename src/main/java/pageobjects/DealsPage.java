@@ -47,7 +47,7 @@ public class DealsPage extends BasePageObject {
     By btnCancel = By.xpath("//button[@data-test='cancel-edit-pipeline']/span[text()='Cancel']");
     By lnkFilters = By.xpath("//span[text()='Filters']");
     By lblDealInStage = By.xpath("//div[text()='{1}']//ancestor::div[contains(@data-test , 'stage')]//div[@data-test='deals-list']//span[text()='{2}']");
-    By lblDealsEmptyMessage = By.xpath("//div[@data-test='no-deals-content']//div[text()='No deals added yet']");
+    By lblDealsEmptyMessage = By.xpath("//div[@data-test='no-deals-content']//div[text()='No deals found to match your criteria']");
 
     public DealsPage(WebDriver driver) {
         super(driver);
