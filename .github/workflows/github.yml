@@ -15,10 +15,6 @@ jobs:
     container:
       image: ubandc2/chethana:main-2bf1a55
     steps: 
-    - name: change directory
-      run: | 
-           cd /app
-           ls
 
     - name: Build with Maven
       run: mvn clean install
