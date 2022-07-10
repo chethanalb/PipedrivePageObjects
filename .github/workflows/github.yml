@@ -59,7 +59,7 @@ jobs:
      run: mvn clean deploy
      env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#    needs: [build, package]
+   needs: [build, package]
  
   trigger:
   
