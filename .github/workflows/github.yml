@@ -20,9 +20,6 @@ jobs:
            cd /usr/src/app
            ls
            mvn clean install
-    - name: Build with Maven
-       run:|
-           mvn clean install
            mvn clean package
            mvn -s settings-xml clean deploy
       env:
