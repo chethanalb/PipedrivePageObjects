@@ -1,6 +1,6 @@
 name: Deploy Page Object Artifacts
 
- -uses:-ssettings-xml
+ -uses:-ssettings.xml
 
 on:
   push:
@@ -21,6 +21,6 @@ jobs:
            ls
            mvn clean install
            mvn clean package
-           mvn -s settings-xml clean deploy
+           mvn -s settings.xml clean deploy
       env:
        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
