@@ -19,10 +19,6 @@ public class LoginPage extends BasePageObject {
     public void enterEmail(String email) throws Exception {
         try {
             logger.log(Level.INFO, "Start | enterEmaill()");
-            System.out.println(isElementDisplayedAfterWaiting(btnLogin ,10000));
-            System.out.println(isElementDisplayedAfterWaiting(txtPassword ,10000));
-            System.out.println(driver.getCurrentUrl());
-            System.out.println(driver.getTitle());
             driver.findElement(txtEmail).sendKeys(email);
         } catch (Exception e) {
             logger.log(Level.INFO, "Fail | enterEmail()");
