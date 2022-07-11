@@ -18,7 +18,7 @@ public class LoginPage extends BasePageObject {
 
     public void enterEmail(String email) throws Exception {
         try {
-            logger.log(Level.INFO, "Start | enterEmail()");
+            logger.log(Level.INFO, "Start | enterEmaill()");
             driver.findElement(txtEmail).sendKeys(email);
         } catch (Exception e) {
             logger.log(Level.INFO, "Fail | enterEmail()");
