@@ -8,7 +8,7 @@ import java.util.logging.Level;
 
 public class LoginPage extends BasePageObject {
 
-    By txtEmail = By.id("login");
+    By txtEmail = By.xpath("//input[@id='login']");
     By txtPassword = By.id("password");
     By btnLogin = By.name("submit");
 
