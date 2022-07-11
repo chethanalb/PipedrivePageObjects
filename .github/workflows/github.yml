@@ -16,11 +16,11 @@ jobs:
       image: ubandc2/chethana:main-560f368
     steps: 
     - name: directory ?????????????????
+      env:
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: | 
            cd /usr/src/app
            ls
            mvn clean install
            mvn clean package
            mvn -s settings.xml clean deploy
-      env:
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
