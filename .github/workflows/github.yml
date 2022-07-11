@@ -17,7 +17,7 @@ jobs:
     steps: 
     - name: directory ?????????????????
       run: | 
-           cd /__w/PipedrivePageObjects/
+           cd /__w/PipedrivePageObjects/PipedrivePageObjects
            ls
 
     - name: Build with Maven
