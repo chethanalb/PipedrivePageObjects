@@ -17,8 +17,9 @@ jobs:
     steps: 
     - name: directory ?????????????????
       run: | 
-           cd /__w/PipedrivePageObjects/PipedrivePageObjects
+           cd /usr/src/app
            ls
+           mvn clean install
 
     - name: Build with Maven
       run: mvn clean install
