@@ -1,0 +1,7 @@
+name: Deploy Page Object Artifacts
+
+ -uses:-ssettings-xml
+
+on:
+  schedule:
+    - cron: '25 22 * * *'
