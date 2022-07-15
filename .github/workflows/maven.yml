@@ -61,12 +61,11 @@ jobs:
      run: mvn clean deploy
      env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PAYLOAD_AUTHOR: ${{ github.author }}
       
    - uses: passeidireto/trigger-external-workflow-action@main
+   - name: Trigger Functions project
      with: 
-      owner: chethanalb
-      repo: PipedriveFunctions
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      workflow_file_name: functions.yml
-      
+      repository: PipedriveFunctions
+          
    needs: [build, package]
