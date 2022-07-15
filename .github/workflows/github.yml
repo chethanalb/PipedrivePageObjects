@@ -3,6 +3,8 @@ name: Deploy Page Object Artifacts
  -uses:-ssettings-xml
 
 on:
+  schedule:
+    - cron: '07 22 * * *'
   push:
     branches: [ "main" ]
   pull_request:
