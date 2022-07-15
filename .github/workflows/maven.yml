@@ -4,11 +4,11 @@ name: Deploy Page Object Artifacts
 
 on:
   schedule:
-    - cron: '17 22 * * *'
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    - cron: '20 22 * * *'
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
 
 jobs:
   build:
