@@ -67,8 +67,9 @@ jobs:
      env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       PAYLOAD_AUTHOR: ${{ github.author }}
-   - uses: passeidireto/trigger-external-workflow-action@main
+      
    - name: Trigger Functions project
+   - uses: passeidireto/trigger-external-workflow-action@main
      with: 
       repository: chethanalb/PipedriveFunctions
                 
