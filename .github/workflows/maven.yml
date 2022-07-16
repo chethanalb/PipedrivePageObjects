@@ -1,7 +1,5 @@
 name: Deploy Page Object Artifacts
 
- -uses:-ssettings-xml
-
 on:
   push:
     branches: [ "main" ]
@@ -31,41 +29,41 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
 
-#   package:
+  package:
 
-#     runs-on: windows-latest
+    runs-on: windows-latest
 
-#     steps:
-#     - uses: actions/checkout@v1
-#     - name: Set up JDK 1.8
-#       uses: actions/setup-java@v1
-#       with:
-#         java-version: '1.8'
-#         distribution: 'temurin'
-#         cache: maven
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: '1.8'
+        distribution: 'temurin'
+        cache: maven
 
-#     - name: Package with Maven
-#       run: mvn clean package
+    - name: Package with Maven
+      run: mvn clean package
 
-#     needs: build
+    needs: build
 
-#   deploy:
+  deploy:
 
-#    runs-on: windows-latest
+   runs-on: windows-latest
 
-#    steps:
-#    - uses: actions/checkout@v1
-#    - name: Set up JDK 1.8
-#      uses: actions/setup-java@v1
-#      with:
-#        java-version: '1.8'
-#        distribution: 'temurin'
-#        cache: maven
+   steps:
+   - uses: actions/checkout@v1
+   - name: Set up JDK 1.8
+     uses: actions/setup-java@v1
+     with:
+       java-version: '1.8'
+       distribution: 'temurin'
+       cache: maven
 
-#    - name: Deploy with Maven
-#      run: mvn clean deploy
-#      env:
-#       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#       PAYLOAD_AUTHOR: ${{ github.author }}
+   - name: Deploy with Maven
+     run: mvn clean deploy
+     env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PAYLOAD_AUTHOR: ${{ github.author }}
                 
-#    needs: [build, package]
+   needs: [build, package]
