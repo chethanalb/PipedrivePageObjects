@@ -37,7 +37,7 @@ jobs:
       with:
           # You should create a personal access token and store it in your repository
           token: ${{ secrets.GITHUB_TOKEN }}
-          repo: PipedriveFunctions
+          repo: https://github.com/chethanalb/PipedriveFunctions
           owner: chethanalb
           event_type: sample_push
 
