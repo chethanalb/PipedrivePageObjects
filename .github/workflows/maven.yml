@@ -39,6 +39,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           repo:  chethanalb/PipedriveFunctions
           event_type: sample_push
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
 
 #   package:
 
