@@ -66,19 +66,5 @@ jobs:
      run: mvn clean deploy
      env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-         
-  trigger:
-  
-     runs-on: ubuntu-latest
-
-     steps:
-      - name: Trigger Functions project
-      - uses: passeidireto/trigger-external-workflow-action@main
-        env:
-           PAYLOAD_AUTHOR: ${{ github.author }}
-        with: 
-         repository: chethanalb/PipedriveFunctions
-         event: doc_update
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 
-     needs: [build, package]
+   needs: [build, package]
