@@ -33,11 +33,12 @@ jobs:
       
       
     - name: trigger another workflow
-      uses: peter-evans/repository-dispatch@v2
+      uses: mvasigh/dispatch-action@main
       with:
           # You should create a personal access token and store it in your repository
           token: ${{ secrets.GH_TOKEN }}
-          repo:  chethanalb/PipedriveFunctions
+          repo:  PipedriveFunctions
+          owner: chethanalb
           event_type: sample_push
 
 #   package:
