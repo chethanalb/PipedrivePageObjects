@@ -70,7 +70,5 @@ jobs:
      run: mvn clean deploy
      env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      PAYLOAD_AUTHOR: ${{ github.author }}
-    
-                
+                   
    needs: [build, package]
