@@ -1,5 +1,7 @@
 name: Deploy Page Object Artifacts
 
+-uses:-ssettings-xml
+
 on:
   push:
     branches: [ "main" ]
