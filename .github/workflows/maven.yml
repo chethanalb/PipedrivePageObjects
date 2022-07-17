@@ -1,6 +1,6 @@
 name: Deploy Page Object Artifacts
 
--uses:-ssettings-xml
+ -uses:-ssettings-xml
 
 on:
   push:
