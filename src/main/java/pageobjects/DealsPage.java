@@ -53,12 +53,12 @@ public class DealsPage extends BasePageObject {
         super(driver);
     }
 
-    public boolean isDealsPageEmpty() throws Exception {
+   public boolean isDealsCardsDisplayed() throws Exception {
         try {
-            logger.log(Level.INFO, "Start | isDealsPageEmpty()");
+            logger.log(Level.INFO, "Start | isDealsCardsDisplayed()");
             return isElementDisplayedAfterWaiting(commonDealCard, 5000);
         } catch (Exception e) {
-            logger.log(Level.INFO, "Fail | isDealsPageEmpty()");
+            logger.log(Level.INFO, "Fail | isDealsCardsDisplayed()");
             throw e;
         }
     }
